@@ -1,0 +1,306 @@
+@import "./mixins";
+
+.whiteOverride{
+  background: $white-smoke-color;
+  flex-direction: row;
+}
+
+.contentLeft{
+  display: flex;
+  width: 20%;
+  height: 100%;
+  flex-direction: column;  
+  background: $light-green-180-innner-bg-color;  
+  justify-content: center;
+
+  &-list{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    list-style: none;
+    align-self: center;
+
+    &-item{
+      font-size: 2rem;
+      font-family: 'Merriweather', serif;
+      margin-top: 15%;
+      color: $white-smoke-color;
+      cursor: pointer;
+
+      &:first-child{
+        margin-top: 0%;
+      }     
+    }
+    
+  }
+
+  @include respond(maxNavBar){                                   
+    display: none;
+    width: 0%;
+    height: 0%;                   
+  } 
+  
+}
+
+.contentRight{
+  display: flex;
+  width: 80%;
+  height: 100%;  
+  flex-direction: column;
+
+  &-top{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    background: $light-green-180-innner-bg-color;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    cursor: default;   
+
+    &-head{
+      display: flex;
+      font-size: 3rem;
+      align-self: center;
+      margin-left: 2%;
+      font-family: 'Merriweather', serif;
+
+      @include respond(maxNavBar){                                  
+        font-size: 1.7rem;  
+        margin-left: 0%;
+        margin-right: 4%;                          
+      } 
+    }
+    
+    @include respond(maxNavBar){                                   
+      justify-content: flex-end;                       
+    } 
+    
+  }
+
+  &-second{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: flex-start;
+    background: $light-green-225-innner-bg-color;
+
+    &-inner{
+      display: flex;
+      width: 100%;
+      height: 95%;
+      align-self: flex-end;
+      justify-content: center;
+      background-color: $white-smoke-color;
+
+      &-content{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: $light-green-180-innner-bg-color;
+        justify-content: center;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        cursor: default; 
+
+        &-text{
+          font-size: 3rem;
+          align-self: center;
+          font-family: 'Merriweather', serif;
+        }
+        
+      }
+
+      &-input{
+        display: flex;
+        width: 75%;
+        height: 40%;
+        align-self: center;        
+        border: none;
+        font-size: 1.5rem;
+        font-family: 'Merriweather', serif;
+        margin-right: 1%;
+        padding: 1%;
+  
+        &:focus{
+          outline: none;
+        }
+       
+        @include respond(maxNavBar){                                   
+          width: 50%;                   
+        } 
+      }
+
+      &-button{
+        display: flex;
+        width: 15%;
+        height: 40%;
+        background: $light-green-innner-bg-color;
+        align-self: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 1%;
+
+        &-content{
+          font-size: 1.5rem;
+          align-self: center;
+          font-family: 'Merriweather', serif;
+          color: white;
+        }
+
+        @include respond(maxNavBar){                                   
+          width: 27%;                   
+        }
+      }
+    }   
+  }
+
+  &-bottom{
+    display: flex;
+    width: 100%;
+    height: 75%;    
+    overflow-y: scroll;
+    flex-wrap: wrap;     
+    justify-content: center;
+    
+    &::-webkit-scrollbar{
+      display: none;
+    }
+
+    &-head{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      &-content{
+        font-size: 2rem;
+        align-self: flex-start;
+
+        @include respond(maxNavBar){                                   
+          font-size: 1.5rem;                 
+        }
+      }
+    }
+    
+
+    &-card{
+      display: flex;
+      width: auto;
+      height: auto;      
+      flex-direction: column;      
+      margin-left: 2%;
+      margin-top: 1%;
+
+      &-body{
+        display: flex;
+        width: 100%;
+        height: 20vh;
+        flex-direction: column;
+        justify-content: space-between;
+        background: $light-green-180-innner-bg-color;
+       
+
+        &-head{
+          display: flex;
+          width: 100%;
+          height: auto; 
+          color: $white-smoke-color;         
+
+          &-content{
+            display: flex;
+            width: 100%;
+            height: auto;
+            font-size: 1.5rem;
+            font-family: 'Merriweather', serif;
+            flex-direction: column;
+            
+            &-top{
+              display: flex;
+              width: 100%;
+              height: 5vh;
+              align-self: center;
+              cursor: default;
+
+              &-content{
+                align-self: center;
+                margin-left: 2%;
+              }
+            }
+
+            &-bottom{
+              display: flex;
+              width: 100%;
+              height: auto;
+              align-self: center;
+              cursor: default;
+
+              &-content{
+                align-self: center;
+                margin-left: 2%;
+              }
+            }     
+            
+            @include respond(maxNavBar){                                   
+              font-size: 1.2rem;                  
+            }
+          }
+        }
+
+        &-bottom{
+          display: flex;
+          width: 100%;
+          height: 7vh;          
+          background-color: $light-gray-card-color;
+          
+
+          &-left{
+            display: flex;
+            width: 80%; //Play Button
+            
+            
+            &-content{
+              display: flex;
+              align-self: center;
+              margin-left: 2%;
+              
+              
+              
+              @include respond(maxNavBar){                                   
+                width: 90%;   
+                
+                audio{
+                  height: 5vh;
+                }
+              }
+            }
+            
+          }
+
+          &-right{
+            display: flex;
+            width: 20%;            
+            justify-content: center;
+            cursor: pointer;
+
+            &-content{
+              display: flex;
+              font-size: 2.3rem;
+              align-self: center;              
+            }
+          }
+          @include respond(maxNavBar){                                   
+            height: 35%;                   
+          }
+        }
+      }
+
+      @include respond(maxNavBar){                                   
+        width: 95%;  
+        margin-bottom: 3%;                    
+      }
+    }
+  }
+  
+  @include respond(maxNavBar){  
+    width: 100%;                      
+  } 
+}

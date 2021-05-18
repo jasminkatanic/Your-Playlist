@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Girassol&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import "./mixins";
+
+.content{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background-color: $dark-purple-bg-color;
+}
+
+.inner{
+  display: flex;
+  width: 90%;
+  height: 90%;
+  align-self: center;
+  background: $light-green-innner-bg-color;
+  box-shadow: 3px 8px 3px 0px rgba(0,0,0,0.66), -3px 8px 3px 0px rgba(0,0,0,0.66);
+  flex-direction: column;
+  justify-content: center;
+
+  &-top{
+    display: flex;
+    width: 100%;
+    height: 15%;
+    justify-content: center;
+    flex-direction: column;    
+
+    &-upper{
+      display: flex;
+      width: 100%;
+      height: auto;  
+      justify-content: center;
+      font-size: 3rem;
+      font-family: 'Girassol', cursive;
+      margin-bottom: 1%;
+    }
+    &-lower{
+      display: flex;
+      width: 100%;
+      height: auto;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-family: 'Merriweather', serif;
+
+      @include respond(maxNavBar){  
+        font-size: 1.2rem;   
+        line-height: 150%;            
+      }
+    }
+  }
+
+  &-bottom{
+    display: flex;
+    width: 60%;
+    height: 80%;    
+    align-self: center;
+    flex-direction: column;
+    
+    &-content{
+      justify-content: center;
+      display: flex;
+      width: 100%;
+      height: auto;
+      align-self: flex-start;
+      
+    }
+
+    &-end{
+      display: flex;
+      width: 100%;
+      height: 20%;
+      justify-content: center;
+      
+
+      h2{
+        margin-top: 5%;
+        font-size: 1.5rem;
+        font-family: 'Merriweather', serif;
+        text-transform: capitalize;
+
+        @include respond(maxNavBar){  
+          font-size: 1.2rem;   
+          line-height: 150%;            
+        }
+      }
+    }
+    @include respond(maxNavBar){  
+      width: 100%;   
+      align-self: flex-start;        
+    }
+  }
+  @include respond(maxNavBar){  
+    width: 93%;                              
+    height: 96vh;                  
+  }   
+}
+
+.authCont{
+  width: 60%;
+  div{
+    max-width: none;
+    min-height: none;   
+    @include respond(maxNavBar){  
+      width: 100%;  
+      margin-left: -4%;              
+    } 
+  }
+  
+  
+  
+  
+  li{
+    margin: 5% auto 15% auto;
+    width: 100%;
+    button{
+      max-width: none;
+      width: 100%;
+
+      span{
+        font-size: 2rem;
+        @include respond(maxNavBar){  
+          font-size: 1rem;     
+        } 
+      }
+
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  @include respond(maxNavBar){  
+    width: 80%;                
+  } 
+ 
+}
+
+.favoriteSong{
+  color: $favorite-red-color;
+}
+
+.pageSelect{
+  border-bottom: solid $white-smoke-color 3px;
+}
